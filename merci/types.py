@@ -6,7 +6,7 @@ TargetData = typing.TypeVar("TargetData")
 Dataset = typing.Tuple[InputData, TargetData]
 
 
-class BinaryClassifier(typing.Protocol):
+class Classifier(typing.Protocol):
     def fit(self, X: InputData, y: TargetData) -> None:
         pass
 
