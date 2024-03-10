@@ -100,7 +100,7 @@ class TransductiveEvaluator(ModelEvaluator):
         """
         Evaluate the model using the provided dataset.
 
-        :return: The accuracy of the model on the dataset
+        :return: The reliability estimation of the model on the dataset
         """
         X_train, y_train = self.train_dataset
         X_test, _ = self.test_dataset
