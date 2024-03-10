@@ -2,6 +2,7 @@
 
 ## Introduction
 
+PyPI: https://pypi.org/project/merci/
 ...
 
 ## Installation
