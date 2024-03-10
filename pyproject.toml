@@ -14,3 +14,4 @@ dynamic = ["version"]
 Homepage = "https://github.com/Tremirre/merci"
 
 [tool.setuptools_scm]
+version_file = "merci/_version.py"
