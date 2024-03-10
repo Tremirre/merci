@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=64", "wheel", "setuptools_scm>=8.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -12,3 +12,5 @@ dynamic = ["version"]
 
 [project.urls]
 Homepage = "https://github.com/Tremirre/merci"
+
+[tool.setuptools_scm]
