@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "merci"
 readme = "README.md"
-description = "MERCI: Model Evaluation of Reliability for Classifier Inference - python package for reliability analysis of binary Classification ML Models"
+description = "MERCI: Model Evaluation of Reliability for Classifier Inference - python package for reliability analysis of classifiers"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
 dynamic = ["version"]

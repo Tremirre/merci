@@ -1,2 +1,21 @@
-# merci
-MERCI: Model Evaluation of Reliability for Classifier Inference - python package for reliability analysis of binary Classification ML Models
+# MERCI: Model Evaluation of Reliability for Classifier Inference - reliability analysis of classifiers in Python
+
+## Introduction
+
+...
+
+## Installation
+
+To install MERCI for local development, clone the repository and install with pip:
+
+```bash
+git clone <repo_url>
+cd merci
+pip install -e .
+```
+
+For a basic installation, use:
+
+```bash
+pip install merci
+```
