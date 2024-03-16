@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 import structlog
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
@@ -17,11 +18,13 @@ def merge_arrays(arr1: np.ndarray, arr2: np.ndarray) -> np.ndarray:
 def run_pipeline() -> None:
     datasets = get_datasets_dict()
     classifiers = get_classifiers_dict()
+    results_dict = {}
     for data_name, dataset in datasets.items():
         x, y = dataset
         x_train, x_test, y_train, y_test = train_test_split(
             x, y, test_size=0.8, random_state=42
         )
+        results_dict[data_name] = {}
         for clf_name, clf in classifiers.items():
             _logger.info(f"Running {clf_name} on {data_name} dataset")
             clf = clf()
@@ -36,6 +39,14 @@ def run_pipeline() -> None:
             )
             reliability = evaluator.evaluate()
             _logger.info("Metrics", Reliability=reliability, Accuracy=accuracy)
+            results_dict[data_name][clf_name] = [accuracy,  reliability]
+    results_df = pd.DataFrame.from_dict(results_dict, orient="index").stack().to_frame()
+    results_df = pd.DataFrame(
+        results_df[0].values.tolist(),
+        index=results_df.index,
+        columns=["accuracy", "reliability"],
+    )
+    results_df.to_csv("output/results.csv")
 
 
 def main() -> None:
